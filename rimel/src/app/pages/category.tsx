@@ -79,15 +79,13 @@ export default function HomePage() {
          ref={scrollRef}
          className="flex gap-6 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 overflow-x-auto scroll-smooth hide-scrollbar"
        >
-         {categories.map(({ name, icon: Icon, active }) => (
-           <div
-             key={name}
-             className={`flex-shrink-0 w-44 sm:w-48 md:w-52 lg:w-56 xl:w-60 h-40 sm:h-44 md:h-48 lg:h-50 flex flex-col items-center justify-center border rounded-lg cursor-pointer transition text-[22px] sm:text-[25px] gap-2.5 ${
-               active
-                 ? 'bg-red-500 border-red-500 text-white'
-                 : 'border-gray-300 text-gray-700'
-             } hover:border-white hover:text-white hover:bg-red-400`}
-           >
+        {categories.map(({ name, icon: Icon, active }, index) => (
+  <div
+    key={`${name}-${index}`} 
+    className={`flex-shrink-0 w-44 sm:w-48 md:w-52 lg:w-56 xl:w-60 h-40 sm:h-44 md:h-48 lg:h-50 flex flex-col items-center justify-center border rounded-lg cursor-pointer transition text-[22px] sm:text-[25px] gap-2.5 ${
+      active ? 'some-active-class' : ''
+    }`}
+  >
              <Icon className="text-4xl sm:text-5xl mb-2.5" />
              <span className="text-sm sm:text-[16px] font-medium text-center">{name}</span>
            </div>
