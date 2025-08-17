@@ -1,8 +1,14 @@
 "use client";
+import React from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
 import { Poppins } from 'next/font/google';
+import { useRouter } from 'next/navigation';
+import Header from '@/app/shared components/header';
+import Navbar from '@/app/shared components/nav';
+import Footer from '@/app/shared components/footer';
+
 
 
 const poppins = Poppins({
@@ -11,6 +17,7 @@ const poppins = Poppins({
     variable: "--font-poppins",
 });
 const Signup = () => {
+    const router = useRouter();
     const [name, setName] = useState('');
     const [emailPhone, setEmailPhone] = useState('');
     const [password, setPassword] = useState('');
@@ -39,11 +46,15 @@ const Signup = () => {
             setPasswordError('');
         }
         if (valid) {
-            window.location.href = '/sign-in';
+            router.push('/pages/sign-in');
         }
     };
 
     return (
+        <>
+        <Header />
+        <Navbar />
+    
         <main className={`${poppins.className} flex h-[calc(100vh-100px)] relative`}>
             <div className="flex-1flex items-center justify-center">
                 <div className="half-page-background-container">
@@ -112,13 +123,15 @@ const Signup = () => {
                     </button>
                     <p className="mt-4 text-center">
                         Already have account? {' '}
-                        <Link href="/signin" className="text-blue-600 hover:underline">
+                        <Link href="/pages/sign-in" className="text-blue-600 hover:underline">
                             Log in
                         </Link>
                     </p>
                 </div>
             </div>
         </main>
+        <Footer />
+        </>
     );
 };
 export default Signup;

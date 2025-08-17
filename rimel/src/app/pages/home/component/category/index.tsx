@@ -44,7 +44,7 @@ export default function HomePage() {
    scrollRef.current?.scrollBy({ left: 600, behavior: 'smooth' });
  };
  return (
-   <main className="font-poppins">
+   <main className="font-poppins w-420 ml-30">
   
      <div className="mb-10"></div>
      <section className="px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 py-6">
@@ -82,7 +82,7 @@ export default function HomePage() {
         {categories.map(({ name, icon: Icon, active }, index) => (
   <div
     key={`${name}-${index}`} 
-    className={`flex-shrink-0 w-44 sm:w-48 md:w-52 lg:w-56 xl:w-60 h-40 sm:h-44 md:h-48 lg:h-50 flex flex-col items-center justify-center border rounded-lg cursor-pointer transition text-[22px] sm:text-[25px] gap-2.5 ${
+    className={`flex-shrink-0 hover:bg-red-400 w-44 sm:w-48 md:w-52 lg:w-56 xl:w-60 h-40 sm:h-44 md:h-48 lg:h-50 flex flex-col items-center justify-center border rounded-lg cursor-pointer transition text-[22px] sm:text-[25px] gap-2.5 ${
       active ? 'some-active-class' : ''
     }`}
   >

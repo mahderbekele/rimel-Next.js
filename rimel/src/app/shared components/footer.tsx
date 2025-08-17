@@ -76,8 +76,8 @@ const Footer = () => {
                         <div className="flex flex-col justify-between gap-2">
                             <a href="" className="">
                                 <Image
-                                width={40}
-                                height={20}
+                               width={200}
+                                height={180}
                                     src="/images/google-play-badge.png"
                                     alt="Google Play Store"
                                     className="w-40 object-contain"
@@ -85,8 +85,8 @@ const Footer = () => {
                             </a>
                             <a href="" className="">
                                 <Image
-                                width={40}
-                                height={20}
+                                width={200}
+                                height={180}
                                     src="/images/app-store-badge.png"
                                     alt="Apple App Store"
                                     className="w-40 object-contain"

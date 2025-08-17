@@ -1,10 +1,13 @@
 "use client";
 
-
 import Image from 'next/image';
+import React from 'react';
 import { useState } from 'react';
 import Link from 'next/link';
 import { Poppins } from 'next/font/google';
+import Navbar from '@/app/shared components/nav';
+import Header from '@/app/shared components/header';
+import Footer from '@/app/shared components/footer';
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -28,8 +31,10 @@ const SignIn = () => {
         }
     };
 
-
     return (
+        <>
+        <Header />
+        <Navbar/>
         <main className={`${poppins.className} flex h-[calc(100vh-100px)] relative`}>
             <div className="flex-1 flex items-center justify-center">
                 <div className="flex-1flex items-center justify-center">
@@ -45,7 +50,7 @@ const SignIn = () => {
             </div>
             <div className="absolute left-1/2 top-0 bottom-0 w-0.5" />
             <div className="flex-1 mb-39 flex items-center justify-center bg-white">
-                <div className="w-100 mt-100">
+                <div className="w-100 top-50">
                     <h1 className="text-4xl mb-12">Log in to Exclusive</h1>
                     <p className="mb-12">Enter your details below</p>
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -68,19 +73,21 @@ const SignIn = () => {
                                 placeholder={('password')}
                             />
                         </div>
-                        <Link href="/home"> <button
+                        <Link href="/"> <button
                             type="submit"
                             className="w-30 p-4 bg-red-600 text-white rounded hover:bg-red-700 transition-colors duration-200"
                         >
                            Log in
                         </button></Link>
-                        <Link href={"/signup"} className="text-red-600 hover:underline ml-23">Forget password?</Link>
+                        <Link href={"/pages/sign-up"} className="text-red-600 hover:underline ml-23">Forget password?</Link>
                     </form>
 
                 </div>
             </div>
             </div>
         </main>
+        <Footer/>
+        </>
     );
 };
 
